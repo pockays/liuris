@@ -1,5 +1,5 @@
 <template>
-  <h5>这是app根组件</h5>
+<router-view/>
 </template>
 
 <script>
@@ -9,5 +9,10 @@ export default {
 </script>
 
 <style>
-
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
 </style>
