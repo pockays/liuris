@@ -1,3 +1,4 @@
+import { nextTick } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 const routes = [
     {
@@ -16,7 +17,7 @@ const routes = [
         component: () => import('../views/ForgotPassword.vue')
     },
     {
-        path: '/resetpassword',
+        path: '/resetpassword/:id',
         name: 'ResetPassword',
         component: () => import('../views/forgotpassword.vue')
     },
@@ -32,4 +33,12 @@ const router = createRouter({
     routes
 })
 
+router.beforeEach((to, from, next) => {
+    const token = localStorage.getItem('msToken')
+    if (to.path === '/' && !token) {
+        next('/login')
+    } else {
+        next()
+    }
+})
 export default router

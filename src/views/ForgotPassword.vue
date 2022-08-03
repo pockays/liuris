@@ -18,7 +18,6 @@
 
 <script lang="ts"> 
 import {ref,getCurrentInstance} from "vue"
-import{useRouter} from 'vue-router'
 export default {
  setup() {
     const{proxy} =getCurrentInstance() as any
