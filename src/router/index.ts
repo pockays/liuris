@@ -4,7 +4,8 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: () => import('../views/Home.vue')
+        component: () => import('../views/Home.vue'),
+        hidden: true
     },
     {
         path: '/login',
@@ -33,12 +34,10 @@ const router = createRouter({
     routes
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from) => {
     const token = localStorage.getItem('msToken')
-    if (to.path === '/' && !token) {
-        next('/login')
-    } else {
-        next()
+    if (to.path == '/' && !token) {
+        return { name: 'Login' }
     }
 })
 export default router
