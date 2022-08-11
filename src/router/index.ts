@@ -5,7 +5,6 @@ const routes = [
         path: '/',
         name: 'Home',
         component: () => import('../views/Home.vue'),
-        hidden: true
     },
     {
         path: '/login',
@@ -26,6 +25,26 @@ const routes = [
         path: '/:catchAll(.*)',
         name: '/404',
         component: () => import('../views/404.vue')
+    },
+    {
+        path: '/notes',
+        name: 'notes',
+        component: () => import('../views/notes.vue')
+    },
+    {
+        path: '/album',
+        name: 'album',
+        component: () => import('../views/album.vue')
+    },
+    {
+        path: '/video',
+        name: 'video',
+        component: () => import('../views/video.vue')
+    },
+    {
+        path: '/collection',
+        name: 'collection',
+        component: () => import('../views/collection.vue')
     }
 ]
 
