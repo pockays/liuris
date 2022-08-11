@@ -5,6 +5,23 @@ const routes = [
         path: '/',
         name: 'Home',
         component: () => import('../views/Home.vue'),
+        children: [{
+            path: 'notes',
+            name: 'notes',
+            component: () => import('../views/notes.vue')
+        }, {
+            path: '/album',
+            name: 'album',
+            component: () => import('../views/album.vue')
+        }, {
+            path: '/video',
+            name: 'video',
+            component: () => import('../views/video.vue')
+        }, {
+            path: '/collection',
+            name: 'collection',
+            component: () => import('../views/collection.vue')
+        }]
     },
     {
         path: '/login',
@@ -26,26 +43,10 @@ const routes = [
         name: '/404',
         component: () => import('../views/404.vue')
     },
-    {
-        path: '/notes',
-        name: 'notes',
-        component: () => import('../views/notes.vue')
-    },
-    {
-        path: '/album',
-        name: 'album',
-        component: () => import('../views/album.vue')
-    },
-    {
-        path: '/video',
-        name: 'video',
-        component: () => import('../views/video.vue')
-    },
-    {
-        path: '/collection',
-        name: 'collection',
-        component: () => import('../views/collection.vue')
-    }
+
+
+
+
 ]
 
 const router = createRouter({
