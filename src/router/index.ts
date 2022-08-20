@@ -22,7 +22,7 @@ const routes = [
         component: () => import('../views/forgotpassword.vue')
     },
     {
-        path: '/:catchAll(.*)',
+        path: '/:pathMatch(.*)',
         name: '/404',
         component: () => import('../views/404.vue')
     },
@@ -57,6 +57,9 @@ router.beforeEach((to, from) => {
     const token = localStorage.getItem('msToken')
     if (to.path == '/' && !token) {
         return { name: 'Login' }
+    }
+    if(to.path == '/login'&&token){
+        return false
     }
 })
 export default router

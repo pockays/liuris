@@ -24,10 +24,10 @@ export default {
     });
     const route = useRoute();
     const routeChange = (val: any, oldVal: any): void => {
-      if (val.path === "/login"||val.path === "/forgotpassword"||val.path === "/resetpassword/:id") {
-        state.isShowNav = false;
-      } else {
+      if (val.path ==="/"||val.path ==="/notes"||val.path ==="/album"||val.path ==="/collection"||val.path ==="/video"){
         state.isShowNav = true;
+      } else {
+        state.isShowNav = false;
       }
   }
   onMounted(() => {

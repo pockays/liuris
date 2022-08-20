@@ -3,7 +3,7 @@
  <div class="nav">
  <!-- banner -->
   <div class="banner">
-   <el-row :gutter="20">
+   <el-row :gutter="20" align="middle" justify="space-evenly">
           <!-- logo -->
           <el-col :span="3">
             <router-link to="/">
@@ -15,7 +15,7 @@
             </router-link>
           </el-col>
           <!-- nav -->
-          <el-col :span="16">
+          <el-col :span="16" >
             <el-menu
               :router="true"
               :default-active="state.activeIndex"
@@ -29,30 +29,23 @@
                 :index="l.index"
                 v-for="l in state.list"
                 :key="l.index"
+                style="margin:0 5px"
               >
                 {{l.name}}
               </el-menuItem>
             </el-menu>
           </el-col>
           <!-- user -->
-          <el-col :span="5"></el-col>
+          <el-col :span="3" class="logout">
+              <el-button type="primary" round size="large" >退出登录</el-button>
+          </el-col>
         </el-row>
         
   </div>
  </div>
 
  <!-- 退出登录 -->
-  <el-form label-width="100px
- " class="container">
-    <el-form-item>
-      <el-button
-      @click="handleLogout()"
-        type="primary"
-        class="submit-btn"
-        >退出登录</el-button
-      >
-    </el-form-item>
-  </el-form>
+  
 </div>
 </template>
 <script  lang="ts">
@@ -87,7 +80,7 @@ export default {
         },
         {
           index: "5",
-          path: "/Collection",
+          path: "/collection",
           name: "收藏",
         }
       ],
@@ -120,10 +113,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-.banner{
-  width: 1200px;
-  margin: 0 auto;
-}
 
 .container{
     width:50%;
@@ -143,8 +132,16 @@ export default {
   border-bottom: 1px solid #eee;
   background-color: #fff;
   .banner {
-    width: 1200px;
+    width: 1500px;
     margin: 0 auto;
+    .el-menu-demo{
+      display: flex;
+      justify-content:center;
+    }
+    .logout{
+      display: flex;
+      justify-content:flex-end;
+    }
   }
   .logo {
     height: 50px;
