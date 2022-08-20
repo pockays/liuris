@@ -29,7 +29,7 @@
                 :index="l.index"
                 v-for="l in state.list"
                 :key="l.index"
-                style="margin:0 5px"
+                style="margin:0 10px"
               >
                 {{l.name}}
               </el-menuItem>
