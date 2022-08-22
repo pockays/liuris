@@ -2,9 +2,10 @@
 <div class="container">
   <Nav v-if="state.isShowNav" />
   <div class="main">
-  <router-view />
+   <router-view />
   </div>
 </div>
+
 </template>
 <script lang="ts">
 import Nav from "./components/Nav.vue"
@@ -42,10 +43,8 @@ export default {
 </script>
 
 <style>
-html,
-body,
+
 #app {
-  width: 100%;
-  height: 100%;
+  padding-top: 61px;
 }
 </style>

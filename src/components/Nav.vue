@@ -36,11 +36,13 @@
             </el-menu>
           </el-col>
           <!-- user -->
-          <el-col :span="3" class="logout">
-              <el-button type="primary" round size="large" >退出登录</el-button>
+          <el-col :span="4" class="logout">
+              <el-button type="primary" round size="large"  @click="handleLogout()">退出登录</el-button>
+          </el-col>
+          <el-col :span="1">
+            <el-button type="warning"  circle ><i class='element-icons el-icon-huanfu' /></el-button>
           </el-col>
         </el-row>
-        
   </div>
  </div>
 
@@ -114,10 +116,6 @@ export default {
 
 <style scoped lang="less">
 
-.container{
-    width:50%;
-    margin:200px auto
-}
 
 .submit-btn {
   width: 100%;
@@ -150,5 +148,9 @@ export default {
     margin-top: 5px;
   }
 }
+.el-icon-huanfu {
+  color: #15ab72;
+}
+
 
 </style>
