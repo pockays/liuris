@@ -1,0 +1,16 @@
+{
+  "id": "3604254",
+  "name": "1",
+  "font_family": "element-icons",
+  "css_prefix_text": "el-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "27402311",
+      "name": "换肤",
+      "font_class": "huanfu",
+      "unicode": "ee16",
+      "unicode_decimal": 60950
+    }
+  ]
+}
