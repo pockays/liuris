@@ -43,7 +43,6 @@ export default {
 </script>
 
 <style>
-
 #app {
   padding-top: 61px;
 }

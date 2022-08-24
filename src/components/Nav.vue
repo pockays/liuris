@@ -40,7 +40,7 @@
               <el-button type="primary" round size="large"  @click="handleLogout()">退出登录</el-button>
           </el-col>
           <el-col :span="1">
-            <el-button type="warning"  circle ><i class='element-icons el-icon-huanfu' /></el-button>
+            <el-button type="warning"  circle class="skip" @click="switchskip()"><i class='element-icons el-icon-huanfu' /></el-button>
           </el-col>
         </el-row>
   </div>
@@ -51,7 +51,7 @@
 </div>
 </template>
 <script  lang="ts">
-import {reactive} from "vue";
+import {reactive} from "vue"
 import{useRouter} from 'vue-router'
 export default {
   name:"Nav",
@@ -108,7 +108,17 @@ export default {
       localStorage.removeItem('msToken')
       router.push('/login')
     }
-    return{handleLogout,state,routeChange,handleSelect}
+
+    let i=0
+    const switchskip = ()=>{
+      var myCars = ["", "src/assets/2.png", "src/assets/3.jpg", "src/assets/4.jpg"];
+      i++
+      document.body.style.backgroundImage = 'url( '+ myCars[i] +' )'
+      if (i == myCars.length - 1) {
+          i = -1;
+      }
+    }
+    return{handleLogout,state,routeChange,handleSelect,switchskip}
   }
 }
 
@@ -149,7 +159,7 @@ export default {
   }
 }
 .el-icon-huanfu {
-  color: #15ab72;
+  color: #74d6fe;
 }
 
 
