@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <Nav v-if="state.isShowNav" />
-  <div class="main">
+  <div :class="state.isShowNav?'main':''">
    <router-view />
   </div>
 </div>
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style>
-#app {
+.main {
   padding-top: 61px;
 }
 </style>

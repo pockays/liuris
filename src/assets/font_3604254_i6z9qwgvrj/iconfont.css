@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "element-icons"; /* Project id 3604254 */
+  src: url('iconfont.woff2?t=1662115322417') format('woff2'),
+       url('iconfont.woff?t=1662115322417') format('woff'),
+       url('iconfont.ttf?t=1662115322417') format('truetype');
+}
+
+.element-icons {
+  font-family: "element-icons" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.el-icon-shejiaotubiao-39:before {
+  content: "\e646";
+}
+
+.el-icon-github:before {
+  content: "\e601";
+}
+
+.el-icon-steam:before {
+  content: "\e8e5";
+}
+
+.el-icon-icon_bilibili-circle:before {
+  content: "\e602";
+}
+
+.el-icon-netease-cloud-music-fill:before {
+  content: "\e7b6";
+}
+
+.el-icon-huanfu:before {
+  content: "\ee16";
+}
+
