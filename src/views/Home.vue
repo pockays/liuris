@@ -18,13 +18,18 @@
            </div>
         </div>
         </el-header>
-       <el-main>Main</el-main>
+        <el-main>
+         <div class="news-item" v-for="item in this.$store.state.mana" :key="item.id" >
+          <h3 class="title" :style="{'background':item.color}"><i class="element-icons title-icon"  :class="item.icon" ></i>{{ item.title }}</h3>
+          <h3 class="more" :style="{'background':item.color}"><i class="element-icons el-icon-arrow-right"></i></h3>
+        </div>
+        </el-main>
       </div>
       <el-footer>Footer</el-footer>
     </el-container>
 </div>
 </template>
-<script  lang="ts">
+<script lang="ts">
 
 export default {
   name:"Home",
@@ -43,6 +48,7 @@ export default {
 
 .el-header {
  display: flex;
+ margin-bottom: 5em;
 }
 .info{
   display: flex;
@@ -84,5 +90,43 @@ export default {
 .el-icon-netease-cloud-music-fill
 {
   color: #c20c0c;
+}
+
+
+
+.el-main{
+  margin-bottom: 5em;
+  .news-item{
+    display: flex;
+    font-size: 18px;
+    justify-content:space-between;
+    margin-bottom: 20px;
+  h3{
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    border-radius: 1em;
+    .title-icon{
+      position: absolute;
+      top: -1px;
+      left: 0px;
+      font-size: 24px;
+      padding: 0.9rem 0.9rem;
+      border-radius: 1em;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .el-icon-arrow-right{
+      font-size: 22px;
+    }
+  }
+
+  .title{
+    padding: .9em 2em .9em 4em;
+  }
+  .more{
+    padding: .8em 1em;
+  }
+}
 }
 </style>

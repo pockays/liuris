@@ -1,8 +1,8 @@
 @font-face {
   font-family: "element-icons"; /* Project id 3604254 */
-  src: url('iconfont.woff2?t=1662115322417') format('woff2'),
-       url('iconfont.woff?t=1662115322417') format('woff'),
-       url('iconfont.ttf?t=1662115322417') format('truetype');
+  src: url('iconfont.woff2?t=1662545284721') format('woff2'),
+       url('iconfont.woff?t=1662545284721') format('woff'),
+       url('iconfont.ttf?t=1662545284721') format('truetype');
 }
 
 .element-icons {
@@ -11,6 +11,22 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.el-icon-arrow-right:before {
+  content: "\e665";
+}
+
+.el-icon-icon-test:before {
+  content: "\e63d";
+}
+
+.el-icon-icon-test1:before {
+  content: "\e640";
+}
+
+.el-icon-icon-test2:before {
+  content: "\e64a";
 }
 
 .el-icon-shejiaotubiao-39:before {

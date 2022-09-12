@@ -138,13 +138,13 @@ export default {
   z-index: 1000;
   width: 100%;
   border-bottom: 1px solid #eee;
-  background-color: #fff;
   .banner {
     width: 1500px;
     margin: 0 auto;
     .el-menu-demo{
       display: flex;
       justify-content:center;
+      background-color:transparent;
     }
     .logout{
       display: flex;
