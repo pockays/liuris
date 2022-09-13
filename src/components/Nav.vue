@@ -111,7 +111,7 @@ export default {
 
     let i=0
     const switchskip = ()=>{
-      var myCars = ["", "src/assets/2.png", "src/assets/3.jpg", "src/assets/4.jpg"];
+      var myCars = ["src/assets/background.png","", "src/assets/2.png", "src/assets/3.jpg", "src/assets/4.jpg"];
       i++
       document.body.style.backgroundImage = 'url( '+ myCars[i] +' )'
       if (i == myCars.length - 1) {

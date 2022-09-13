@@ -42,7 +42,10 @@ export default {
 }
 </script>
 
-<style>
+<style >
+body {
+  background: url('src/assets/background.png');
+}
 .main {
   padding-top: 61px;
 }

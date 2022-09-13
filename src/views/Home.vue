@@ -19,10 +19,22 @@
         </div>
         </el-header>
         <el-main>
-         <div class="news-item" v-for="item in this.$store.state.mana" :key="item.id" >
+      <div class="news" v-for="item in this.$store.state.mana" :key="item.id">
+         <div class="news-item" >
           <h3 class="title" :style="{'background':item.color}"><i class="element-icons title-icon"  :class="item.icon" ></i>{{ item.title }}</h3>
           <h3 class="more" :style="{'background':item.color}"><i class="element-icons el-icon-arrow-right"></i></h3>
-        </div>
+         </div>
+         <div class="news-body">
+          <el-row :gutter="27">
+            <el-col :span="6" v-for="lis in this.$store.state.note" :key="lis.id" justify="space-between">
+              <a href="" class="news-article">
+                <img :src="lis.image" alt="">
+                <h4>{{lis.word}}</h4>
+              </a>
+            </el-col>
+          </el-row>
+         </div>
+      </div>
         </el-main>
       </div>
       <el-footer>Footer</el-footer>
@@ -128,5 +140,46 @@ export default {
     padding: .8em 1em;
   }
 }
+.news-body
+{
+  margin-bottom: 80px;
+  .news-article{
+   display: block;
+   height: 193.5px;
+   overflow: hidden;
+   border-radius: 1em;
+   color: #fff;
+   position:relative;
+   
+   img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: transform .5s;
+   }
+
+   h4 {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: .75em;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: rgba(0,0,0,.5);
+   }
+ }
+
+
+ .news-article:hover {
+  color:#ffc107;
+  img{
+    transform: scale(1.1);
+  }
+ }
+} 
+
+
 }
 </style>
