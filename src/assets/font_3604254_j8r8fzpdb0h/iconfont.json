@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4910648",
+      "name": "作品著作",
+      "font_class": "zuopinzhuzuo",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "31637151",
+      "name": "资讯",
+      "font_class": "zixun",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
       "icon_id": "15838431",
       "name": "arrow-right",
       "font_class": "arrow-right",

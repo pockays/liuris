@@ -19,23 +19,57 @@
         </div>
         </el-header>
         <el-main>
-      <div class="news" v-for="item in this.$store.state.mana" :key="item.id">
-         <div class="news-item" >
-          <h3 class="title" :style="{'background':item.color}"><i class="element-icons title-icon"  :class="item.icon" ></i>{{ item.title }}</h3>
-          <h3 class="more" :style="{'background':item.color}"><i class="element-icons el-icon-arrow-right"></i></h3>
-         </div>
-         <div class="news-body">
-          <el-row :gutter="27">
-            <el-col :span="6" v-for="lis in this.$store.state.note" :key="lis.id" justify="space-between">
-              <a href="" class="news-article">
-                <img :src="lis.image" alt="">
-                <h4>{{lis.word}}</h4>
-              </a>
-            </el-col>
-          </el-row>
-         </div>
-      </div>
-        </el-main>
+          <div class="news" v-for="item in $store.state.mana" :key="item.id">
+           <div class="news-item" >
+            <h3 class="title" :style="{'background':item.color}"><i class="element-icons title-icon"  :class="item.icon" ></i>{{ item.title }}</h3>
+            <h3 class="more" :style="{'background':item.color}"><i class="element-icons el-icon-arrow-right"></i></h3>
+           </div>
+           <div class="news-body">
+            <el-row :gutter="27">
+              <el-col :span="item.span" v-for="lis in item.note" :key="lis.id" justify="space-between"> 
+                <a href="" class="news-article">
+                  <img :src="lis.image" alt="">
+                  <h4>{{lis.word}}</h4>
+                </a>
+              </el-col>
+            </el-row>
+           </div>
+          </div>
+          <div class="news" >
+              <div class="news-item" >
+               <h3 class="title" style="background:#ff6347"><i class="element-icons title-icon el-icon-zixun"  ></i> 摆烂日记 </h3>
+               <h3 class="more" style="background:#ff6347"><i class="element-icons el-icon-arrow-right"></i></h3>
+              </div>
+              <div class="news-body">
+                <el-row :gutter="27">
+
+                  <el-col :span="12">
+                    <div class="note-box">
+                      <p class="substance">
+                       
+                      </p>
+                      <p class="date">
+                        
+                      </p>
+                    </div>
+                  </el-col>
+
+                  <el-col :span="12">
+                    <div class="note-box">
+                      <p class="substance">
+                        
+                      </p>
+                      <p class="date">
+                        
+                      </p>
+                    </div>
+                  </el-col>
+
+                </el-row>
+              </div>
+
+          </div>
+          </el-main>
       </div>
       <el-footer>Footer</el-footer>
     </el-container>
@@ -108,6 +142,9 @@ export default {
 
 .el-main{
   margin-bottom: 5em;
+  .news:nth-child(4) .news-article{
+    height: 230px;
+  }
   .news-item{
     display: flex;
     font-size: 18px;
@@ -143,6 +180,7 @@ export default {
 .news-body
 {
   margin-bottom: 80px;
+
   .news-article{
    display: block;
    height: 193.5px;
@@ -150,7 +188,6 @@ export default {
    border-radius: 1em;
    color: #fff;
    position:relative;
-   
    img {
    width: 100%;
    height: 100%;
@@ -169,8 +206,34 @@ export default {
     text-overflow: ellipsis;
     background: rgba(0,0,0,.5);
    }
+  }
+  .note-box {
+    color: #fff;
+    padding: 1em;
+    height: 100%;
+    position: relative;
+    border-radius: 1em;
+    background: #ff9987;
  }
 
+ p {
+  line-height: 1.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
+ .substance{
+  margin-bottom: 3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+ }
+ .date{
+  left: 1em;
+  right: 1em;
+  bottom: 1em;
+  position: absolute;
+  white-space: nowrap;
+ }
 
  .news-article:hover {
   color:#ffc107;
