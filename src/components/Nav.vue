@@ -102,13 +102,13 @@ export default {
     const handleSelect = (val: string, oldVal: string): void => {
       state.activeIndex = val;
     };
-
+    // 退出登录
     const router = useRouter()
     const handleLogout = ()=>{
       localStorage.removeItem('msToken')
       router.push('/login')
     }
-
+    // 换肤
     let i=0
     const switchskip = ()=>{
       var myCars = ["src/assets/background.png","", "src/assets/2.png", "src/assets/3.jpg", "src/assets/4.jpg"];
@@ -118,6 +118,7 @@ export default {
           i = -1;
       }
     }
+
     return{handleLogout,state,routeChange,handleSelect,switchskip}
   }
 }

@@ -18,7 +18,10 @@
            </div>
         </div>
         </el-header>
+
+
         <el-main>
+          <!-- 前四个栏子 -->
           <div class="news" v-for="item in $store.state.mana" :key="item.id">
            <div class="news-item" >
             <h3 class="title" :style="{'background':item.color}"><i class="element-icons title-icon"  :class="item.icon" ></i>{{ item.title }}</h3>
@@ -35,6 +38,7 @@
             </el-row>
            </div>
           </div>
+          <!-- 第五个栏子 -->
           <div class="news" >
               <div class="news-item" >
                <h3 class="title" style="background:#ff6347"><i class="element-icons title-icon el-icon-zixun"  ></i> 摆烂日记 </h3>
@@ -64,26 +68,63 @@
                       </p>
                     </div>
                   </el-col>
-
                 </el-row>
               </div>
-
           </div>
-          </el-main>
+          <!-- 赞赏栏 -->
+          <el-row :gutter="20" justify="center" class="thanks">
+                  <el-col :span="5"><div class="donate"><a href="" class="thanks_btn"><i class="element-icons el-icon-yinhangka"></i></a><h2>给我点米</h2></div></el-col>
+                  <el-col :span="5"><div class="good"><button  class="thanks_btn" @click="good.value+=1,update_good_debounce()"  ><i class="element-icons el-icon-aixin"></i></button><h2>{{ good.value }}</h2></div></el-col>
+                  <el-col :span="5"><div class="live"><a href="" class="thanks_btn"><i class="element-icons el-icon-zhibo"></i></a><h2>直播间</h2></div></el-col>
+          </el-row>
+        </el-main>
       </div>
       <el-footer>Footer</el-footer>
     </el-container>
 </div>
 </template>
 <script lang="ts">
-
+import axios from "axios"
+import {onMounted,  reactive} from "vue"
+import debounce from "../hook/debounce"
 export default {
   name:"Home",
   components:{},
+  setup(){
+    let good = reactive({value:''})
+    const get_good=()=>{
+      axios.get('http://127.0.0.1/user').then(res=>{
+        console.log(res.data)
+       good.value = res.data[0].good
+      }).catch(err=>{
+        console.log("获取数据失败"+err)
+      })
+    }
+    onMounted(get_good)
+
+    const update_good=()=>{
+      axios.get('http://127.0.0.1/update',{ params: {good:good.value}})
+      .catch(err=>{
+        console.log("更新数据失败"+err)
+      })
+    }
+
+    const update_good_debounce=debounce(update_good,1000)
+
+    return{good,update_good_debounce}
+  }
 }
 </script>
 
 <style scoped lang="less">
+@keyframes heart-scale {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform:scale(.9);
+  }
+}
 .common-layout {
    width: 1200px;
    margin: 0 auto;
@@ -211,6 +252,7 @@ export default {
     color: #fff;
     padding: 1em;
     height: 100%;
+    height: 150px;
     position: relative;
     border-radius: 1em;
     background: #ff9987;
@@ -242,7 +284,40 @@ export default {
   }
  }
 } 
-
+.thanks{
+  text-align: center;
+  .thanks_btn {
+    color: #fff;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 2.5em;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    line-height: 2.5;
+    border-radius: 8em;
+    border-color: transparent;
+    background: #ffc107;
+    .element-icons {
+      font-size: inherit;
+      display: inline-block
+    }
+    .el-icon-aixin {
+      animation: heart-scale .5s ease-in-out infinite alternate;
+    }
+  }
+  h2 {
+    margin-top: .5em;
+    font-weight: 700;
+    color: #ffc107;
+    font-size: 1.5em;
+  }
+  .good .thanks_btn {
+    background: #ff6347;
+  }
+}
 
 }
+
+
 </style>
