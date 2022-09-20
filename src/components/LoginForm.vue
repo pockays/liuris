@@ -40,6 +40,7 @@
 <script lang="ts"> 
 import { getCurrentInstance} from "vue"
 import{useRouter} from 'vue-router'
+import {startLoading,endLoading} from "../hook/loading"
 export default {
  props:{
     loginUser:{
@@ -58,13 +59,15 @@ export default {
     router.push("/forgotpassword")
   }
   const handleLogin = (formName:string)=>{
+    startLoading()
     proxy.$refs[formName].validate((valid:boolean)=>{
      if(valid){
       proxy.$axios.post("/api/v1/auth/login",props.loginUser).
       then((res:any)=>{
         console.log(res.data)
-        const{token} =res.data
+        const {token} =res.data
         localStorage.setItem("msToken",token)
+        endLoading()
         router.push("/")
       })
      } else{

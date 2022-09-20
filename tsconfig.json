@@ -28,7 +28,7 @@
     "src/**/*.vue",
     "src/router/index.js",
     "src/router/index.js"
-  ],
+, "src/hook/loading.js"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

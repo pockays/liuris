@@ -58,6 +58,7 @@
 <script lang="ts">
 import { getCurrentInstance} from "vue"
 import { useRouter } from "vue-router"
+import {startLoading,endLoading} from "../hook/loading"
 export default {
     props:{ 
         registerUser:{
@@ -72,6 +73,7 @@ setup(props:any){
    const {proxy} = getCurrentInstance() as any
     const router= useRouter()
     const handleRegister = (formName:string)=> {
+      startLoading()
       proxy.$refs[formName].validate((valid:boolean)=>{
      if(valid){
       proxy.$axios.post("/api/v1/auth/register",props.registerUser).then((res:any)=>{
@@ -79,6 +81,7 @@ setup(props:any){
           message:"注册成功",
           type:"success"
         })
+        endLoading()
         router.push("/")
       })
      } else{
