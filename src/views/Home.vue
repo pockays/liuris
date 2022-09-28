@@ -105,7 +105,7 @@
       </el-footer>
     </el-container>
     <!-- 回到顶部 -->
-    <el-backtop :bottom="100" right="30">
+    <el-backtop :bottom="100" :right="30">
     <i class="element-icons el-icon-shangjiantou"></i>
   </el-backtop>
 </div>
@@ -136,7 +136,7 @@ export default {
         console.log("更新数据失败"+err)
       })
     }
-    const update_good_debounce=debounce(update_good,1000)
+    const update_good_debounce=debounce(update_good,500)
 
     return{good,update_good_debounce}
   }
