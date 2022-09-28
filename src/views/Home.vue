@@ -104,6 +104,10 @@
         </div>
       </el-footer>
     </el-container>
+    <!-- 回到顶部 -->
+    <el-backtop :bottom="100" right="30">
+    <i class="element-icons el-icon-shangjiantou"></i>
+  </el-backtop>
 </div>
 </template>
 <script lang="ts">
@@ -365,5 +369,17 @@ position: absolute;
 background: url(src/assets/footer.png) top/cover;
 }
 
+// 回到顶部
+.el-backtop {
+  width: 2.25em;
+  height: 2.25em;
+  border-radius: 66%;
+  box-shadow: 0 0 10px rgba(0,0,0,.1), 0 5px 20px rgba(0,0,0,.2);
+}
+.el-icon-shangjiantou {
 
+  font-size: 25px;
+  font-weight: 700;
+  color: #795548;
+}
 </style>

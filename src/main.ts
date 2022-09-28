@@ -3,7 +3,7 @@ import router from './router'
 import App from './App.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import './assets/font_3604254_ekg3st3n344/iconfont.css'
+import './assets/font_3604254_e9u6il94dd/iconfont.css'
 import axios from './http'
 import { store } from './store/store'
 
