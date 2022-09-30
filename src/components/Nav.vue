@@ -15,7 +15,7 @@
             </router-link>
           </el-col>
           <!-- nav -->
-          <el-col :span="16" >
+          <el-col :span="16" :push="1">
             <el-menu
               :router="true"
               :default-active="state.activeIndex"
@@ -29,9 +29,9 @@
                 :index="l.index"
                 v-for="l in state.list"
                 :key="l.index"
-                style="margin:0 10px"
+                style=" font-size: 16px;color: #795548"
               >
-                {{l.name}}
+              <i class="element-icons" :class="l.icon" ></i>&nbsp;&nbsp;{{l.name}}
               </el-menuItem>
             </el-menu>
           </el-col>
@@ -64,26 +64,31 @@ export default {
           index: "1",
           path: "/",
           name: "liuris",
+          icon:"el-icon-shouye"
         },
         {
           index: "2",
           path: "/notes",
           name: "笔记",
+          icon:"el-icon-youji"
         },
         {
           index: "3",
           path: "/album",
           name: "相册",
+          icon:"el-icon-tupian"
         },
         {
           index: "4",
           path: "/video",
           name: "视频",
+          icon:"el-icon-chakantiezishipin"
         },
         {
           index: "5",
           path: "/collection",
           name: "收藏",
+          icon:"el-icon-shoucang1"
         }
       ],
       activeIndex: "1",
@@ -138,14 +143,18 @@ export default {
   left: 0;
   z-index: 1000;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  box-shadow: 0 0 1em rgba(0, 0, 0, .1);
   .banner {
-    width: 1500px;
+    width: 1600px;
     margin: 0 auto;
     .el-menu-demo{
       display: flex;
       justify-content:center;
       background-color:transparent;
+      border-bottom: none;
+    .el-menu-item {
+      padding: 0 15px;
+    }
     }
     .logout{
       display: flex;

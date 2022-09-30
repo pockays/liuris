@@ -80,10 +80,10 @@
         </el-main>
       </div>
 
-      
+      <!-- 底部 -->
       <el-footer>
         <div class="wrap">
-          <el-row justify="center">
+          <el-row justify="center" >
             <el-col :span="8">
               <p>@ 2022 
                  <a href="http://localhost:8080/#/">liuris</a>
@@ -357,16 +357,19 @@ a {
   display: flex;
   justify-content:flex-end;
 }
+.el-row{
+  margin: -15px 0;
+}
 }
 footer::before {
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-content: "";
-z-index: -1;
-position: absolute;
-background: url(src/assets/footer.png) top/cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  background: url(src/assets/footer.png) top/cover;
 }
 
 // 回到顶部
