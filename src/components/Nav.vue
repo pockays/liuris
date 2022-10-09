@@ -155,6 +155,9 @@ export default {
     .el-menu-item {
       padding: 0 15px;
     }
+    .el-menu-item:focus {
+      background-color: transparent;
+    }
     }
     .logout{
       display: flex;
