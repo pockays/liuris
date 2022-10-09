@@ -161,16 +161,17 @@ export default {
       justify-content:flex-end;
     }
   }
-  .logo {
+  .logo{
     height: 50px;
     margin: 0;
     border-radius: 50%;
     margin-top: 5px;
   }
-}
+
 .el-icon-huanfu {
   color: #74d6fe;
 }
 
+}
 
 </style>
