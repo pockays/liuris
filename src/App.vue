@@ -9,7 +9,7 @@
 </template>
 <script lang="ts">
 import Nav from "./components/Nav.vue"
-import {  useRoute, } from 'vue-router';
+import {  useRoute,useRouter } from 'vue-router';
 import {reactive,onMounted} from "vue";
 export default {
   name:"App",
@@ -24,6 +24,11 @@ export default {
       isShowNav: true,
     });
     const route = useRoute();
+    const router = useRouter();
+    // 刷新后回到首页
+    if (route.path !== "")
+        router.replace("")
+
     const routeChange = (val: any, oldVal: any): void => {
       if (val.path ==="/"||val.path ==="/notes"||val.path ==="/album"||val.path ==="/collection"||val.path ==="/video"){
         state.isShowNav = true;
@@ -49,4 +54,6 @@ body {
 .main {
   padding-top: 61px;
 }
+
+
 </style>

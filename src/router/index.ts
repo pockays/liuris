@@ -28,7 +28,7 @@ const routes = [
     {
         path: '/notes',
         name: 'notes',
-        component: () => import('../views/notes.vue')
+        component: () => import('../views/notes.vue'),
     },
     {
         path: '/album',

@@ -56,6 +56,7 @@ import{useRouter} from 'vue-router'
 export default {
   name:"Nav",
   components:{},
+ 
   setup(){
       const state = reactive ({
       title: "liuris",
