@@ -4,16 +4,18 @@
   <div :class="state.isShowNav?'main':''">
    <router-view />
   </div>
+  <footers />
 </div>
 
 </template>
 <script lang="ts">
 import Nav from "./components/Nav.vue"
+import footers from "./views/footers.vue"
 import {  useRoute,useRouter } from 'vue-router';
 import {reactive,onMounted} from "vue";
 export default {
   name:"App",
-  components:{Nav},
+  components:{Nav,footers},
   watch: {
     $route: function (val: any, oldVal: any) {
       (this as any).routeChange(val, oldVal);

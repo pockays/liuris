@@ -1,11 +1,14 @@
 <template>
-<div>
+
+<el-container>
 <!-- nav -->
+<el-header>
 <el-menu
     :default-active="activeIndex"
     class="el-menu-demo"
     mode="horizontal"
     @select="handleSelect"
+    :ellipsis="false"
   >
     <el-menu-item index="1" router="/notes?year=2022" key="1" @click="routeChange('2022')">2022</el-menu-item>
     <el-menu-item index="2" router="/notes?year=2021" key="2" @click="routeChange('2021')">2021</el-menu-item>
@@ -13,8 +16,14 @@
     <el-menu-item index="4" router="/notes?year=2019" key="4" @click="routeChange('2019')">2019</el-menu-item>
     <el-menu-item index="5" router="/notes?year=2018" key="5" @click="routeChange('2018')">2018</el-menu-item>
   </el-menu>
+</el-header>
 
-</div>
+<el-main>
+
+</el-main>
+
+</el-container>
+
 </template>
 
 <script lang="ts">
@@ -37,5 +46,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+.el-container {
+  width: 1200px;
+  margin: 0 auto;
+  .el-header{
+    display: flex;
+    justify-content:center;
+  }
+}
 </style>
