@@ -26,10 +26,10 @@ export default {
       isShowNav: true,
     });
     const route = useRoute();
-    const router = useRouter();
-    // 刷新后回到首页
-    if (route.path !== "")
-        router.replace("")
+    // // 刷新后回到首页
+    // const router = useRouter();
+    // if (route.path !== "")
+    //     router.replace("")
 
     const routeChange = (val: any, oldVal: any): void => {
       if (val.path ==="/"||val.path ==="/notes"||val.path ==="/album"||val.path ==="/collection"||val.path ==="/video"){

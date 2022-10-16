@@ -56,7 +56,11 @@ import{useRouter} from 'vue-router'
 export default {
   name:"Nav",
   components:{},
- 
+  // watch: {
+  //   $route: function (val: any, oldVal: any) {
+  //     (this as any).routeChange(val, oldVal);
+  //   },
+  // },
   setup(){
       const state = reactive ({
       title: "liuris",
@@ -94,19 +98,23 @@ export default {
       ],
       activeIndex: "1",
     });
+    // 该代码块用于路由变化后导航栏的状态保持    注！！   该代码块与上面watch搭配使用，但是有个小bug即刷新后有一个从首页高亮到该页高亮的过程，后采用下面使用sessionStorage的方式
+    // const routeChange = (val: any, oldVal: any) => {  
+    //   for (let i = 0; i < state.list.length; i++) {
+    //     const l = state.list[i];
+    //     if (l.path === val.path) {
+    //       state.activeIndex = i + 1 + "";
+    //       state.title = l.name;
+    //       break;
+    //     }
+    //   }
+    // };
 
-    const routeChange = (val: any, oldVal: any) => {
-      for (let i = 0; i < state.list.length; i++) {
-        const l = state.list[i];
-        if (l.path === val.path) {
-          state.activeIndex = i + 1 + "";
-          state.title = l.name;
-          break;
-        }
-      }
-    };
+    // @ts-ignore
+    state.activeIndex = window.sessionStorage.getItem('state.activeIndex')
     const handleSelect = (val: string, oldVal: string): void => {
       state.activeIndex = val;
+      window.sessionStorage.setItem('state.activeIndex', state.activeIndex)
     };
     // 退出登录
     const router = useRouter()
@@ -125,7 +133,7 @@ export default {
       }
     }
 
-    return{handleLogout,state,routeChange,handleSelect,switchskip}
+    return{handleLogout,state,handleSelect,switchskip}
   }
 }
 
