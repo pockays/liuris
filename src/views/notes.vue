@@ -20,7 +20,59 @@
   </el-menu>
 </el-header>
 
-<el-main>
+<el-main v-if="items_year=='2022'">
+  <div  class="notes_items" v-for="notes_items in $store.state.article[0].diary" :key="notes_items.id" >
+    <h1>{{notes_items.head}}</h1>
+    <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    <div>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+</el-main>
+<el-main v-if="items_year=='2021'">
+  <div  class="notes_items" v-for="notes_items in $store.state.article[1]" :key="notes_items.id" >
+    <h1>{{notes_items.head}}</h1>
+    <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    <div>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+</el-main>
+<el-main v-if="items_year=='2020'">
+  <div  class="notes_items" v-for="notes_items in $store.state.article[2]" :key="notes_items.id" >
+    <h1>{{notes_items.head}}</h1>
+    <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    <div>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+</el-main>
+<el-main v-if="items_year=='2019'">
+  <div  class="notes_items" v-for="notes_items in $store.state.article[3]" :key="notes_items.id" >
+    <h1>{{notes_items.head}}</h1>
+    <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    <div>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+</el-main>
+<el-main v-if="items_year=='2018'">
+  <div  class="notes_items" v-for="notes_items in $store.state.article[4]" :key="notes_items.id" >
+    <h1>{{notes_items.head}}</h1>
+    <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    <div>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 
 </el-main>
 
@@ -37,6 +89,7 @@ export default {
     setup(){
       const {proxy} = getCurrentInstance() as any
       const activeIndex = ref('1')
+      const items_year =ref('2022')
       // @ts-ignore    
       activeIndex.value = window.sessionStorage.getItem('activeIndex')
       const handleSelect = (val: string, oldVal: string): void => {
@@ -46,6 +99,7 @@ export default {
     // 动态路由导航(query参数版)
       const router = useRouter()
       const routeChange= (year:string)=>{ 
+        items_year.value=year
         router.push({path:'/notes',query:{year:year}})       
       }  
       // 鼠标经过导航栏选项变黄
@@ -71,14 +125,14 @@ export default {
         // @ts-ignore 
         event.target.style.color='red'
       }
-    return {activeIndex,handleSelect,routeChange,notesNavHover,notesNavLeave}
+    return {activeIndex,handleSelect,routeChange,notesNavHover,notesNavLeave,items_year}
     }
 }
 </script>
 
 <style lang="less" scoped>
 .el-container {
-  width: 1200px;
+  width: 900px;
   margin: 0 auto;
   padding: 48px 20px;
   .el-header{
