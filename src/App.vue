@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+  <sakura />
   <Nav v-if="state.isShowNav" />
   <div :class="state.isShowNav?'main':''">
    <router-view />
@@ -11,11 +12,12 @@
 <script lang="ts">
 import Nav from "./components/Nav.vue"
 import footers from "./views/footers.vue"
+import sakura from "./views/sakura.vue"
 import {  useRoute,useRouter } from 'vue-router';
 import {reactive,onMounted} from "vue";
 export default {
   name:"App",
-  components:{Nav,footers},
+  components:{Nav,footers,sakura},
   watch: {
     $route: function (val: any, oldVal: any) {
       (this as any).routeChange(val, oldVal);

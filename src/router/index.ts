@@ -52,13 +52,14 @@ const router = createRouter({
     routes
 })
 
-router.beforeEach((to, from) => {
-    const token = localStorage.getItem('msToken')
-    if (to.path == '/' && !token) {
-        return { name: 'Login' }
-    }
-    if(to.path == '/login'&&token){
-        return false
-    }
-})
+// 路由守卫，由于登录接口的失效故暂且不用否则进不去。。。
+// router.beforeEach((to, from) => {
+//     const token = localStorage.getItem('msToken')
+//     if (to.path == '/' && !token) {
+//         return { name: 'Login' }
+//     }
+//     if(to.path == '/login'&&token){
+//         return false
+//     }
+// })
 export default router

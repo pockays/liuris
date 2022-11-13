@@ -23,7 +23,9 @@
 <el-main v-if="items_year=='2022'">
   <div  class="notes_items" v-for="notes_items in $store.state.article[0].diary" :key="notes_items.id" >
     <h1>{{notes_items.head}}</h1>
+    <div class="notes_content">
     <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    </div>
     <div>
       <span></span>
       <span></span>
@@ -32,9 +34,11 @@
 
 </el-main>
 <el-main v-if="items_year=='2021'">
-  <div  class="notes_items" v-for="notes_items in $store.state.article[1]" :key="notes_items.id" >
+  <div  class="notes_items" v-for="notes_items in $store.state.article[1].diary" :key="notes_items.id" >
     <h1>{{notes_items.head}}</h1>
+    <div class="notes_content">
     <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    </div>
     <div>
       <span></span>
       <span></span>
@@ -43,9 +47,11 @@
 
 </el-main>
 <el-main v-if="items_year=='2020'">
-  <div  class="notes_items" v-for="notes_items in $store.state.article[2]" :key="notes_items.id" >
+  <div  class="notes_items" v-for="notes_items in $store.state.article[2].diary" :key="notes_items.id" >
     <h1>{{notes_items.head}}</h1>
+    <div class="notes_content">
     <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    </div>
     <div>
       <span></span>
       <span></span>
@@ -54,9 +60,11 @@
 
 </el-main>
 <el-main v-if="items_year=='2019'">
-  <div  class="notes_items" v-for="notes_items in $store.state.article[3]" :key="notes_items.id" >
+  <div  class="notes_items" v-for="notes_items in $store.state.article[3].diary" :key="notes_items.id" >
     <h1>{{notes_items.head}}</h1>
+    <div class="notes_content">
     <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    </div>
     <div>
       <span></span>
       <span></span>
@@ -65,9 +73,11 @@
 
 </el-main>
 <el-main v-if="items_year=='2018'">
-  <div  class="notes_items" v-for="notes_items in $store.state.article[4]" :key="notes_items.id" >
+  <div  class="notes_items" v-for="notes_items in $store.state.article[4].diary" :key="notes_items.id" >
     <h1>{{notes_items.head}}</h1>
+    <div class="notes_content">
     <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    </div>
     <div>
       <span></span>
       <span></span>
@@ -132,6 +142,7 @@ export default {
 
 <style lang="less" scoped>
 .el-container {
+  position: relative;
   width: 900px;
   margin: 0 auto;
   padding: 48px 20px;
@@ -148,8 +159,27 @@ export default {
       .is-active{
         background-color: #9aff47;
       }
+    } 
+  }
+  .el-main{
+    --el-main-padding: 38px;
+    letter-spacing: 0.05em;
+    line-height: 31px;
+    h1 {
+      border-left: 2px solid #ffc107;
+      font-size: 1.2em;
+      padding-left: .75em;
+      margin-bottom: 16px;
+      color: pink;
     }
-    
+    .notes_content{
+    color: #67492e;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: .5em;
+    background-color: #fff;
+    box-shadow: 0 0 1em rgba(0,0,0,.05);
+    }
   }
 }
 
