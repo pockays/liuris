@@ -10,7 +10,7 @@
     @select="handleSelect"
     :ellipsis="false"
     background-color="transparent"
-    text-color="red"
+    text-color="#f8cedd"
   >
     <el-menu-item index="1" router="/notes?year=2022" key="1" @click="routeChange('2022')" @mouseenter="notesNavHover" @mouseleave="notesNavLeave">2022</el-menu-item>
     <el-menu-item index="2" router="/notes?year=2021" key="2" @click="routeChange('2021')" @mouseenter="notesNavHover" @mouseleave="notesNavLeave">2021</el-menu-item>
@@ -26,10 +26,11 @@
     <div class="notes_content">
     <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
     </div>
-    <div>
-      <span></span>
-      <span></span>
-    </div>
+    <el-row>
+      <el-col :span="2"><i class="element-icons" :class="notes_items.weather" ></i>&nbsp;{{notes_items.weather_detail}}</el-col>
+      <el-col :span="2" ><i class="element-icons" :class="notes_items.mood" ></i>&nbsp;{{notes_items.mood_detail}}</el-col>
+      <el-col :span="1" :offset="19" class="like"><i class="element-icons el-icon-dianzan" @click="notes_items.like++" ></i>&nbsp;{{notes_items.like}}</el-col>
+    </el-row>
   </div>
 
 </el-main>
@@ -91,13 +92,14 @@
 </template>
 
 <script lang="ts">
+
 import{useRouter} from 'vue-router'
-import {ref,getCurrentInstance} from "vue"
+import {ref} from "vue"
+
 export default {
     name:"notes",
     components:{},
     setup(){
-      const {proxy} = getCurrentInstance() as any
       const activeIndex = ref('1')
       const items_year =ref('2022')
       // @ts-ignore    
@@ -128,13 +130,14 @@ export default {
         var items =document.querySelectorAll('.el-menu-demo1 .el-menu-item')
         for(var i=0;i<items.length;i++){
           (items[i] as HTMLElement).style.backgroundColor='transparent'
-          
         }
         // @ts-ignore 
-        (items[activeIndex.value-1]as HTMLElement).style.backgroundColor='#9aff47'
+        (items[activeIndex.value-1]as HTMLElement).style.backgroundColor='#9bedff'
         // @ts-ignore 
-        event.target.style.color='red'
+        event.target.style.color='#f8cedd'
       }
+
+    
     return {activeIndex,handleSelect,routeChange,notesNavHover,notesNavLeave,items_year}
     }
 }
@@ -157,7 +160,8 @@ export default {
         border: none;
       }
       .is-active{
-        background-color: #9aff47;
+        background-color: #9bedff;
+        color: rgb(249, 159, 174)!important;
       }
     } 
   }
@@ -167,7 +171,7 @@ export default {
     line-height: 31px;
     h1 {
       border-left: 2px solid #ffc107;
-      font-size: 1.2em;
+      font-size: 1.4em;
       padding-left: .75em;
       margin-bottom: 16px;
       color: pink;
@@ -180,6 +184,21 @@ export default {
     background-color: #fff;
     box-shadow: 0 0 1em rgba(0,0,0,.05);
     }
+    .el-row{
+      color: #888;
+      font-size: 1.1em;
+      
+      .element-icons{
+        font-size: 1.1em;
+        vertical-align:-0.9px;
+      }
+      .like{
+      display: flex;
+      justify-content:flex-end;
+      }
+
+    }
+
   }
 }
 

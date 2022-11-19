@@ -1,5 +1,6 @@
 let db = require('../db/index')
 
+// 首页的点赞
 exports.get = (req,res) => {
     var sql = 'select * from mana'
     db.query(sql,[req.query.good],(err,data)=>{

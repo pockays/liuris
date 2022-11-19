@@ -5,7 +5,7 @@
   <div :class="state.isShowNav?'main':''">
    <router-view />
   </div>
-  <footers />
+  <footers v-if="state.isShowNav"/>
 </div>
 
 </template>
