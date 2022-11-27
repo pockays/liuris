@@ -24,7 +24,7 @@
   <div  class="notes_items" v-for="notes_items in $store.state.article[0].diary" :key="notes_items.id" >
     <h1>{{notes_items.head}}</h1>
     <div class="notes_content">
-    <p v-for="p_items in notes_items.content" :key="p_items">{{p_items}}</p>
+    <p v-for="p_items in notes_items.content" :key="p_items" >{{p_items}}</p>
     </div>
     <el-row>
       <el-col :span="2"><i class="element-icons" :class="notes_items.weather" ></i>&nbsp;{{notes_items.weather_detail}}</el-col>
@@ -32,8 +32,8 @@
       <el-col :span="1" :offset="19" class="like"><i class="element-icons el-icon-dianzan" @click="notes_items.like++" ></i>&nbsp;{{notes_items.like}}</el-col>
     </el-row>
   </div>
-
 </el-main>
+
 <el-main v-if="items_year=='2021'">
   <div  class="notes_items" v-for="notes_items in $store.state.article[1].diary" :key="notes_items.id" >
     <h1>{{notes_items.head}}</h1>
@@ -184,7 +184,14 @@ export default {
     background-color: #fff;
     box-shadow: 0 0 1em rgba(0,0,0,.05);
     }
-    .el-row{
+    p {
+      text-indent:2em;
+      margin-bottom: 1em;
+    }
+    p:last-child {
+    margin-bottom: 0;
+    }
+ 
       color: #888;
       font-size: 1.1em;
       
@@ -200,6 +207,6 @@ export default {
     }
 
   }
-}
+
 
 </style>
