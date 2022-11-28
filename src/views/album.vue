@@ -24,7 +24,7 @@
     <el-image
       style="width: 260px; height: 200px;"
       :src="items_album.url"
-      :preview-src-list="items_album.srcList"
+      :preview-src-list="$store.state.album[0].srcList"
       :initial-index="items_album.id"
       fit="cover"
       lazy
@@ -39,7 +39,7 @@
     <el-image
       style="width: 260px; height: 200px;"
       :src="items_album.url"
-      :preview-src-list="items_album.srcList"
+      :preview-src-list="$store.state.album[1].srcList"
       :initial-index="items_album.id"
       fit="cover"
       lazy
@@ -54,7 +54,7 @@
     <el-image
       style="width: 260px; height: 200px;"
       :src="items_album.url"
-      :preview-src-list="items_album.srcList"
+      :preview-src-list="$store.state.album[2].srcList"
       :initial-index="items_album.id"
       fit="cover"
       lazy
@@ -69,7 +69,7 @@
     <el-image
       style="width: 260px; height: 200px;"
       :src="items_album.url"
-      :preview-src-list="items_album.srcList"
+      :preview-src-list="$store.state.album[3].srcList"
       :initial-index="items_album.id"
       fit="cover"
       lazy
@@ -84,7 +84,7 @@
     <el-image
       style="width: 260px; height: 200px;"
       :src="items_album.url"
-      :preview-src-list="items_album.srcList"
+      :preview-src-list="$store.state.album[5].srcList"
       :initial-index="items_album.id"
       fit="cover"
       lazy

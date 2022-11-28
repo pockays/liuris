@@ -436,26 +436,24 @@ export const store = createStore({
             content:[
                 {
                   id:0  ,
-                  url:'src/assets/4.jpg',
-                  srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
+                  url:'src/assets/3.jpg',
+                  
                 },
                 {
                   id:1,
                   url:'src/assets/4.jpg',
-                  srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
+                  
                 },
                 {
                   id:2,
-                  url:'src/assets/4.jpg',
-                  srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
+                  url:'src/assets/2.png',
                 },
                 {
                   id:3,
                   url:'src/assets/4.jpg',
-                  srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
                 },
             ],
-            
+            srcList:['src/assets/3.jpg','src/assets/4.jpg','src/assets/2.png','src/assets/4.jpg',]
         },
 
 
@@ -465,10 +463,10 @@ export const store = createStore({
                 {
                   id:0  ,
                   url:'src/assets/4.jpg',
-                  srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
+                  
                 }
             ],
-            srcList:[]
+            srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
         },
 
 
@@ -478,10 +476,10 @@ export const store = createStore({
                 {
                   id:0  ,
                   url:'src/assets/4.jpg',
-                  srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
+                  
                 }
             ],
-            srcList:[]
+            srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
         },
 
 
@@ -491,10 +489,10 @@ export const store = createStore({
                 {
                   id:0  ,
                   url:'src/assets/4.jpg',
-                  srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
+                  
                 }
             ],
-            srcList:[]
+            srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
         },
 
 
@@ -504,10 +502,10 @@ export const store = createStore({
                 {
                   id:0  ,
                   url:'src/assets/4.jpg',
-                  srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
+                  
                 }
             ],
-            srcList:[]
+            srcList:['src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg','src/assets/4.jpg',]
         },
 
        ],
