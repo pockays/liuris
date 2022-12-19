@@ -452,6 +452,11 @@ export const store = createStore({
                   id:3,
                   url:'src/assets/4.jpg',
                 },
+                {
+                    id:4,
+                    url:'src/assets/4.jpg',
+                },
+                
             ],
             srcList:['src/assets/3.jpg','src/assets/4.jpg','src/assets/2.png','src/assets/4.jpg',]
         },

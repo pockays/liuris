@@ -19,8 +19,9 @@
   </el-header>
   
   <el-main v-if="items_year=='2022'">
-    <el-row justify="space-evenly" >
+    <el-row  >
     <el-col v-for="items_album in $store.state.album[0].content"  :key="items_album.id" :span="6">
+    <div class="image-items" >
     <el-image
       style="width: 260px; height: 200px;"
       :src="items_album.url"
@@ -28,7 +29,9 @@
       :initial-index="items_album.id"
       fit="cover"
       lazy
-    />
+      /> 
+      <p>芝士mana</p>
+    </div>
   </el-col>
   </el-row>
   </el-main>
@@ -84,7 +87,7 @@
     <el-image
       style="width: 260px; height: 200px;"
       :src="items_album.url"
-      :preview-src-list="$store.state.album[5].srcList"
+      :preview-src-list="$store.state.album[4].srcList"
       :initial-index="items_album.id"
       fit="cover"
       lazy
@@ -171,7 +174,32 @@ export default {
      max-height: 80%!important;
      max-width: 80%!important;
     }
+    .el-col{
+      position: relative;
+      margin-bottom: 20px;
+      .image-items{
+        overflow: hidden;
+        position: relative;
+        width: 260px;
+        height: 200px;
+        border-radius: 1em;
+      p{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        color: #fff;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.283);
+        transition:bottom .3s;
+     } 
+    }
+    .image-items:hover p {
+      bottom: -30px;
+     }
   }
 }
-
+}
 </style>

@@ -237,7 +237,7 @@ export default {
    width: 100%;
    height: 100%;
    object-fit: cover;
-   transition: transform .5s;
+   transition:transform .5s;
    }
 
    h4 {
